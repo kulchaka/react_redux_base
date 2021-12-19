@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {inputText} from "../redux/actions";
 
 const Title = (props) => {
@@ -10,11 +10,14 @@ const Title = (props) => {
     dispatch(inputText(event.target.value))
   }
 
+  const text = useSelector(state => state.inputReducer.text)
+
   return (
       <div className="card-title">
         <div className="card-title-top">
           <input type='text' onChange={handleChange}/>
         </div>
+        <p>{text}</p>
       </div>
   );
 };
