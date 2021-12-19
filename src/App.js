@@ -1,5 +1,6 @@
 import './App.css';
 import Likes from "./components/Likes";
+import Title from "./components/Title";
 
 const App = () => {
   return (
@@ -8,7 +9,8 @@ const App = () => {
         <div className="card">
           <div className="card-image">
             <img src="./sea.jpg" alt="surfing"/>
-            <Likes />
+            <Title/>
+            <Likes/>
           </div>
         </div>
       </div>
