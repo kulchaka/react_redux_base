@@ -1,6 +1,8 @@
 import React from 'react';
+import {connect} from "react-redux";
 
 const Likes = (props) => {
+  console.log(props)
   return (
       <div>
         <div className="button-controls">
@@ -11,4 +13,11 @@ const Likes = (props) => {
   );
 };
 
-export default Likes;
+const mapStateToProps = (state) => {
+  console.log('mapStateToProps >', state)
+  return {
+    likes: state.likes
+  }
+}
+
+export default connect(mapStateToProps)(Likes);
