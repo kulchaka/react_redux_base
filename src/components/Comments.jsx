@@ -42,7 +42,9 @@ const Comments = (props) => {
           />
           <input type="submit" hidden/>
         </form>
-        <SingleComment text={textComment}/>
+        {comments && comments.map(el => {
+          return <SingleComment data={el} key={el.id}/>
+        })}
       </div>
   );
 };
